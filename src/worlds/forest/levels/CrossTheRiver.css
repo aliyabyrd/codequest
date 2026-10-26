@@ -1,0 +1,166 @@
+
+.river-level {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 24px;
+  background: linear-gradient(#8fd8f2, #d9f6d6);
+}
+
+.river-sky {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 78% 16%,
+      #fff8bd 0 35px,
+      transparent 36px
+    ),
+    linear-gradient(#92d9f1, #e3f8db);
+}
+
+.river-hills {
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  bottom: 80px;
+  height: 190px;
+  border-radius: 50% 50% 0 0;
+  background: #88cda0;
+}
+
+.river-water {
+  position: absolute;
+  top: 43%;
+  left: 30%;
+  width: 42%;
+  height: 57%;
+  background: linear-gradient(
+    90deg,
+    #70d4ed,
+    #319ed3,
+    #a4edfa
+  );
+  transform: skewX(-9deg);
+  border-radius: 30% 20% 0 0;
+}
+
+.river-wave {
+  position: absolute;
+  height: 7px;
+  border-radius: 50%;
+  background: #e5ffff;
+  opacity: 0.75;
+  animation: riverFlow 3s ease-in-out infinite alternate;
+}
+
+.wave-one {
+  width: 65%;
+  top: 35%;
+  left: 15%;
+}
+
+.wave-two {
+  width: 45%;
+  top: 70%;
+  left: 35%;
+  animation-delay: -1s;
+}
+
+.river-left-bank,
+.river-right-bank {
+  position: absolute;
+  bottom: 0;
+  height: 47%;
+  background: #7ac878;
+}
+
+.river-left-bank {
+  left: 0;
+  width: 30%;
+  border-radius: 0 50% 0 0;
+}
+
+.river-right-bank {
+  right: 0;
+  width: 28%;
+  border-radius: 50% 0 0 0;
+}
+
+.river-stone {
+  position: absolute;
+  z-index: 3;
+  width: 62px;
+  height: 24px;
+  background: #c2bbb0;
+  border: 4px solid #92918e;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 8px 0 #637e7d55;
+}
+
+.river-goal {
+  position: absolute;
+  z-index: 5;
+  font-size: 38px;
+  transform: translate(-50%, -80%);
+}
+
+.river-characters {
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  align-items: flex-end;
+  transform: translate(-50%, -75%);
+  transition:
+    left 0.65s ease,
+    top 0.65s ease;
+}
+
+.river-characters img:first-child {
+  width: 82px;
+  height: 125px;
+  object-fit: contain;
+}
+
+.river-characters img:last-child {
+  width: 52px;
+  height: 80px;
+  object-fit: contain;
+  margin-left: -15px;
+}
+
+.river-success {
+  position: absolute;
+  z-index: 20;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  border-radius: 30px;
+  background: #fff8d8;
+  color: #7957a8;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+@keyframes riverFlow {
+  from {
+    transform: translateX(-12px);
+  }
+
+  to {
+    transform: translateX(12px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .river-characters {
+    transition: none;
+  }
+
+  .river-wave {
+    animation: none;
+  }
+}

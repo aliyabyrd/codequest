@@ -1,0 +1,26 @@
+.gate-level{position:relative;isolation:isolate;overflow:hidden;width:100%;height:100%;min-height:340px;border-radius:20px;background:linear-gradient(180deg,#b9e7f4 0%,#d9f6d2 60%,#a3db91 100%)}
+.gate-sun{position:absolute;top:7%;left:13%;width:66px;height:66px;border-radius:50%;background:#ffe8a2;box-shadow:0 0 55px #ffefaa}
+.gate-hill{position:absolute;width:110%;height:47%;border-radius:50% 50% 0 0}
+.gate-hill-back{left:-30%;bottom:13%;background:#8bcaa0}.gate-hill-front{right:-30%;bottom:-7%;background:#65b98c}
+.gate-ground{position:absolute;bottom:0;width:100%;height:23%;background:linear-gradient(#7fc47c,#4fae7b)}
+.gate-tree{position:absolute;right:1%;bottom:12%;width:30%;height:75%}.gate-trunk{position:absolute;bottom:0;left:35%;width:36%;height:62%;border-radius:40% 40% 12% 12%;background:linear-gradient(90deg,#79503f,#ad7653,#765044);box-shadow:inset 7px 0 #6d4b3c}.gate-canopy{position:absolute;z-index:2;top:0;left:-13%;width:115%;height:52%;border-radius:50%;background:radial-gradient(circle at 35% 30%,#a5e77f,#4ba46e 75%);box-shadow:-26px 19px 0 #63b67c,20px 15px 0 #3b9866}
+.gate-step{position:absolute;z-index:3;width:13%;height:7%;border-radius:50%;transform:translate(-50%,-50%);background:linear-gradient(#e9e0ba,#b9ac98);border:2px solid #f7efce;box-shadow:0 5px 0 #918b80}
+.gate-key,.gate-door,.gate-characters{position:absolute;transform:translate(-50%,-50%)}
+.gate-key{z-index:7;font-size:32px;filter:drop-shadow(0 0 12px #ffe78a);animation:gate-float 2s ease-in-out infinite}
+.gate-door{z-index:6;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:46px;filter:drop-shadow(0 0 12px #ffe6b6)}.gate-door small{font-size:18px;margin-top:-12px}.gate-door-open{animation:gate-pop .65s ease both}
+.gate-characters{z-index:9;display:flex;align-items:end;justify-content:center;gap:0;width:17%;transition:left .65s ease,top .65s ease}.gate-characters img{width:50%;height:76px;object-fit:contain;filter:drop-shadow(0 5px 4px #365d4544)}
+.gate-sparkle{position:absolute;z-index:5;color:#fff4a4;font-size:22px;text-shadow:0 0 12px #fff;animation:gate-float 2.6s ease-in-out infinite}
+.gate-inventory{position:absolute;z-index:12;top:12px;left:14px;border-radius:18px;background:#fffdeedc;padding:7px 12px;color:#537355;font-weight:700;font-size:13px}
+.gate-victory{position:absolute;z-index:15;left:50%;bottom:12px;transform:translateX(-50%);width:max-content;max-width:94%;text-align:center;padding:11px 15px;border-radius:18px;background:#fff9dfed;color:#50734d;font-weight:800;box-shadow:0 6px 24px #385b4d44}
+@keyframes gate-float{50%{transform:translate(-50%,-65%)}}@keyframes gate-pop{50%{transform:translate(-50%,-50%) scale(1.3)}}
+@media(max-width:550px){.gate-characters img{height:54px}.gate-door{font-size:32px}.gate-tree{right:-5%;width:40%}.gate-victory{font-size:12px}}
+
+/* Sequence puzzle: reveal key, approach tree, open gate */
+.gate-flowers{position:absolute;left:19%;bottom:22%;z-index:4;font-size:27px;letter-spacing:6px}
+.gate-hidden-key{left:28%;top:67%}
+.gate-door{left:84%;top:63%}
+.gate-characters{left:18%;top:74%;transition:left .9s ease,top .9s ease}
+.gate-characters.gate-at-door{left:68%;top:74%}
+.gate-tree{right:0%;bottom:12%;width:32%;height:75%}
+.gate-key{animation:gate-key-bob 2s ease-in-out infinite}
+@keyframes gate-key-bob{50%{transform:translate(-50%,-65%)}}

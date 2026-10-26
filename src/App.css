@@ -1,0 +1,1353 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+/* =====================================
+   CODEQUEST — GLOBAL STYLES
+   ===================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Nunito', system-ui, sans-serif;
+  color: #343565;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+.app-shell {
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    #82c9f6 0%,
+    #bceaf6 49%,
+    #ecf9f4 100%
+  );
+}
+
+/* =====================================
+   SKY, SUN, AND CLOUDS
+   ===================================== */
+
+.sky-sun {
+  position: absolute;
+  right: 9%;
+  top: 5%;
+  width: 155px;
+  aspect-ratio: 1;
+  background: #fff0a8;
+  border-radius: 50%;
+  box-shadow: 0 0 90px #fff0a899;
+  pointer-events: none;
+}
+
+.cloud {
+  position: absolute;
+  width: 180px;
+  height: 54px;
+  background: #ffffffa9;
+  border-radius: 80px;
+  pointer-events: none;
+  animation: drift 9s ease-in-out infinite alternate;
+}
+
+.cloud::before,
+.cloud::after {
+  content: '';
+  position: absolute;
+  background: inherit;
+  border-radius: 50%;
+}
+
+.cloud::before {
+  width: 86px;
+  height: 86px;
+  left: 32px;
+  bottom: 8px;
+}
+
+.cloud::after {
+  width: 70px;
+  height: 70px;
+  right: 24px;
+  bottom: 7px;
+}
+
+.cloud-one {
+  top: 17%;
+  left: 6%;
+}
+
+.cloud-two {
+  top: 32%;
+  right: 4%;
+  transform: scale(0.8);
+  animation-delay: -3s;
+}
+
+.cloud-three {
+  top: 60%;
+  left: 42%;
+  transform: scale(0.6);
+  animation-delay: -5s;
+}
+
+@keyframes drift {
+  to {
+    translate: 18px -8px;
+  }
+}
+
+/* =====================================
+   HOMEPAGE — ORIGINAL V8 DESIGN
+   ===================================== */
+
+.home-screen {
+  min-height: 100vh;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  padding: 35px 18px 55px;
+}
+
+.hero-content {
+  z-index: 2;
+  text-align: center;
+  position: relative;
+  width: min(650px, 100%);
+}
+
+.eyebrow {
+  display: inline-block;
+  letter-spacing: 2.5px;
+  font-weight: 900;
+  font-size: 12px;
+  color: #4c63aa;
+  background: #ffffffd9;
+  border-radius: 30px;
+  padding: 10px 20px;
+}
+
+.home-screen h1 {
+  font-size: clamp(64px, 9vw, 100px);
+  line-height: 1;
+  margin: 15px 0 16px;
+  color: #6d50c2;
+  letter-spacing: -5px;
+  text-shadow: 0 6px #423a8c;
+}
+
+.home-screen h1 span,
+.mini-logo span {
+  color: #ff9b35;
+}
+
+.tagline {
+  display: inline-block;
+  background: #fff6e4;
+  border: 2px solid #f6c56e;
+  border-radius: 35px;
+  padding: 11px 24px;
+  font-size: 17px;
+  font-weight: 900;
+  margin: 0;
+}
+
+.hero-description {
+  color: #466b9a;
+  font-size: 17px;
+  font-weight: 900;
+  margin: 20px 0 0;
+}
+
+/* Nova and Byte */
+
+.character {
+  display: block;
+  object-fit: contain;
+  mix-blend-mode: normal;
+  filter: drop-shadow(0 10px 7px #3a629b24);
+}
+
+.home-characters {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: 8px;
+  margin: 8px auto 12px;
+  height: 265px;
+}
+
+.home-characters .nova {
+  width: 200px;
+  height: 265px;
+}
+
+.home-characters .byte {
+  width: 145px;
+  height: 195px;
+  animation: hover-byte 3.3s ease-in-out infinite;
+}
+
+@keyframes hover-byte {
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+/* Homepage buttons */
+
+.home-actions {
+  max-width: 360px;
+  margin: auto;
+}
+
+.primary {
+  background: #ffd268;
+  color: #754316;
+  border: 2px solid #e7a537;
+  box-shadow: 0 6px #df9f3a;
+  border-radius: 17px;
+  padding: 14px 26px;
+  font-weight: 900;
+  font-size: 18px;
+  min-height: 55px;
+}
+
+.primary span {
+  margin-left: 10px;
+}
+
+.home-actions .primary {
+  width: 100%;
+}
+
+.secondary-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.secondary-actions button {
+  flex: 1;
+  border: 2px solid white;
+  background: #fffcf1ec;
+  border-radius: 15px;
+  padding: 12px 8px;
+  font-weight: 900;
+  color: #5d54a7;
+  box-shadow: 0 4px #aab3d5;
+}
+
+.primary:hover:not(:disabled),
+.secondary-actions button:hover,
+.back:hover {
+  transform: translateY(-2px);
+}
+
+.foreground-grass {
+  position: absolute;
+  bottom: -120px;
+  left: -20%;
+  width: 140%;
+  height: 210px;
+  background: #91cf79;
+  border-radius: 50% 50% 0 0;
+  z-index: 0;
+}
+
+/* =====================================
+   FLOATING HOMEPAGE ISLANDS
+   ===================================== */
+
+.hero-backdrop {
+  position: absolute;
+  inset: 0;
+  max-width: 1500px;
+  margin: auto;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-backdrop .floating-island {
+  position: absolute;
+  transform: scale(0.65);
+  transform-origin: center;
+  opacity: 0.9;
+  animation: islandFloat 5s ease-in-out infinite;
+}
+
+.hero-backdrop .forest {
+  top: 20%;
+  left: 1%;
+}
+
+.hero-backdrop .robot {
+  top: 9%;
+  right: 5%;
+}
+
+.hero-backdrop .mystery {
+  top: 48%;
+  right: 0;
+}
+
+.hero-backdrop .space {
+  top: 52%;
+  left: 1%;
+}
+
+.hero-backdrop .studio {
+  top: 4%;
+  left: 28%;
+  transform: scale(0.42);
+}
+
+/* =====================================
+   INNER PAGES AND NAVIGATION
+   ===================================== */
+
+.inner-screen {
+  position: relative;
+  z-index: 1;
+  max-width: 1280px;
+  margin: auto;
+  padding: 22px 24px 70px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.back {
+  background: #ffffffd9;
+  border: 2px solid white;
+  border-radius: 15px;
+  padding: 10px 18px;
+  color: #4e59a3;
+  font-weight: 900;
+}
+
+.mini-logo {
+  font-size: 25px;
+  color: #654fc0;
+  font-weight: 900;
+  text-shadow: 0 2px white;
+}
+
+.topbar-right {
+  font-size: 12px;
+  font-weight: 900;
+  color: #506aa0;
+}
+
+.page-title {
+  text-align: center;
+  margin: 18px auto 12px;
+}
+
+.page-title h2,
+.gameplay-wrap h2,
+.progress-panel h2,
+.creation-panel h2 {
+  font-size: clamp(38px, 5vw, 58px);
+  color: #6250b8;
+  margin: 8px 0 2px;
+  line-height: 1.1;
+}
+
+.page-title p {
+  font-size: 17px;
+  color: #4d6c98;
+  margin: 9px auto;
+}
+
+/* =====================================
+   WORLD MAP — V8 FLOATING ISLANDS
+   ===================================== */
+
+.map-panel {
+  position: relative;
+  border: 4px solid #ffffffa8;
+  border-radius: 32px;
+  min-height: 1050px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 55% 45%,
+      #d3f9ff88,
+      transparent 40%
+    ),
+    linear-gradient(
+      180deg,
+      #77bdf3 0%,
+      #b2e4ff 65%,
+      #e2f9ff 100%
+    );
+  box-shadow: 0 20px 50px #5278a63d;
+}
+
+/* Remove unwanted rectangular clouds */
+
+.map-panel::before,
+.map-panel::after {
+  display: none !important;
+}
+
+.world-map {
+  position: relative;
+  min-height: 990px;
+}
+
+/* Floating island movement */
+
+@keyframes islandFloat {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -15px;
+  }
+}
+
+.floating-island {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 260px;
+  min-height: 260px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  text-align: center;
+  z-index: 2;
+  animation: islandFloat 4s ease-in-out infinite;
+  transition: filter 0.25s ease;
+}
+
+.floating-island.forest {
+  animation-duration: 4s;
+}
+
+.floating-island.robot {
+  animation-duration: 5s;
+  animation-delay: -1s;
+}
+
+.floating-island.space {
+  animation-duration: 4.5s;
+  animation-delay: -2s;
+}
+
+.floating-island.mystery {
+  animation-duration: 5.5s;
+  animation-delay: -1.5s;
+}
+
+.floating-island.studio {
+  animation-duration: 4.8s;
+  animation-delay: -2.5s;
+}
+
+.floating-island:focus-visible {
+  outline: 3px solid #634ad3;
+  outline-offset: 5px;
+  border-radius: 25px;
+}
+
+.floating-island.locked {
+  filter: saturate(0.75);
+}
+
+.floating-island.unlocked:hover {
+  filter: brightness(1.08);
+}
+
+/* Original SVG island illustrations */
+
+.island-illustration {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+  filter: drop-shadow(
+    0 18px 12px rgba(53, 96, 147, 0.2)
+  );
+}
+
+.illustrated-island-label {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-top: -12px;
+  z-index: 10;
+  padding: 8px 14px;
+  min-width: 190px;
+  border-radius: 17px;
+  border: 2px solid white;
+  background: #fffdf4ed;
+  box-shadow: 0 5px 12px #4d6c9730;
+}
+
+.illustrated-island-label strong {
+  font-size: 15px;
+  color: #5e50a6;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.illustrated-island-label small {
+  font-size: 11px;
+  color: #60799d;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.floating-island.unlocked .illustrated-island-label {
+  background: #f2fff2;
+  border-color: #88d786;
+}
+
+/* Five islands: open sky-map positioning */
+
+.world-map .forest {
+  top: 4%;
+  left: 9%;
+}
+
+.world-map .robot {
+  top: 4%;
+  right: 9%;
+  left: auto;
+}
+
+.world-map .space {
+  top: 36%;
+  left: 9%;
+  bottom: auto;
+}
+
+.world-map .mystery {
+  top: 36%;
+  right: 9%;
+}
+
+.world-map .studio {
+  top: 68%;
+  left: calc(50% - 130px);
+  right: auto;
+  bottom: auto;
+}
+
+.map-legend {
+  position: absolute;
+  left: 22px;
+  bottom: 14px;
+  z-index: 4;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  font-weight: 900;
+  color: #4c6396;
+}
+
+.map-legend span {
+  background: #fffdf3e0;
+  padding: 8px 12px;
+  border-radius: 12px;
+}
+
+/* Nova and Byte below the world map */
+
+.map-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  max-width: 740px;
+  margin: 15px auto 0;
+  background: #fffdf1d9;
+  border: 3px solid white;
+  border-radius: 20px;
+  padding: 8px 20px;
+}
+
+.map-friends {
+  display: flex;
+  align-items: end;
+  flex-shrink: 0;
+}
+
+.map-friends .nova {
+  height: 88px;
+  width: 66px;
+}
+
+.map-friends .byte {
+  height: 67px;
+  width: 64px;
+}
+
+.map-footer p {
+  font-weight: 800;
+  line-height: 1.4;
+  color: #52669a;
+}
+
+/* =====================================
+   ENCHANTED FOREST — V8 SCENE
+   ===================================== */
+
+.forest-scene {
+  position: relative;
+  overflow: hidden;
+  min-height: 330px;
+  border-radius: 20px;
+  background: linear-gradient(
+    #9eddf2,
+    #c9edc3 70%,
+    #76bd75 70%
+  );
+  margin: 22px auto;
+}
+
+.illustrated-forest {
+  isolation: isolate;
+}
+
+.forest-background-art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.forest-characters {
+  position: absolute;
+  inset: auto 0 10px;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: 20px;
+  z-index: 1;
+}
+
+.forest-characters .nova {
+  height: 205px;
+  width: 150px;
+}
+
+.forest-characters .byte {
+  height: 135px;
+  width: 120px;
+}
+
+/* =====================================
+   GAMEPLAY SCREENS
+   ===================================== */
+
+.gameplay-wrap {
+  max-width: 1100px;
+  margin: 26px auto 0;
+  text-align: center;
+}
+
+.gameplay-wrap > p {
+  color: #4d6c98;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.gameplay-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.15fr)
+    minmax(310px, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.gameplay-scene {
+  position: relative;
+  min-height: 390px;
+  overflow: hidden;
+  border: 4px solid white;
+  border-radius: 26px;
+  background: linear-gradient(#a8ddf4, #c5ecc2);
+  box-shadow: 0 15px 30px #51669a22;
+}
+
+.gameplay-scene.robot {
+  background: linear-gradient(#a7c7fb, #e4dcfa);
+}
+
+.gameplay-scene.mystery {
+  background: linear-gradient(#a2e7e5, #f9e9ad);
+}
+
+.gameplay-scene.space {
+  background: linear-gradient(#7776bb, #c6b4ef);
+}
+
+.gameplay-scene.studio {
+  background: linear-gradient(#f6c9e4, #fff0bd);
+}
+
+.gameplay-scene .forest-scene {
+  height: 390px;
+  min-height: 390px;
+  margin: 0;
+  border-radius: 0;
+}
+
+.gameplay-illustration {
+  position: relative;
+  height: 390px;
+  display: grid;
+  place-items: center;
+  font-size: 110px;
+}
+
+.gameplay-friends {
+  display: flex;
+  align-items: end;
+  gap: 8px;
+}
+
+.gameplay-friends .nova {
+  height: 170px;
+  width: 130px;
+}
+
+.gameplay-friends .byte {
+  height: 115px;
+  width: 95px;
+}
+
+.gameplay-illustration .world-symbol {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  font-size: 75px;
+}
+
+/* Level selector */
+
+.level-selector {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 18px auto;
+  flex-wrap: wrap;
+}
+
+.level-selector button {
+  border: 2px solid white;
+  border-radius: 12px;
+  padding: 10px 14px;
+  background: #ffffff99;
+  color: #6253a9;
+  font-weight: 900;
+}
+
+.level-selector button.active {
+  background: #fce49c;
+}
+
+.level-selector button:disabled {
+  opacity: 0.45;
+}
+
+/* Coding editor */
+
+.code-editor {
+  background: #fffdf6;
+  border: 4px solid white;
+  border-radius: 26px;
+  padding: 22px;
+  text-align: left;
+  box-shadow: 0 15px 30px #51669a22;
+}
+
+.code-editor h3 {
+  font-size: 24px;
+  color: #6851b6;
+  margin: 0 0 6px;
+}
+
+.code-editor h4 {
+  margin: 18px 0 8px;
+  color: #4f5997;
+}
+
+.code-editor p {
+  line-height: 1.5;
+}
+
+.command-palette,
+.program-blocks,
+.editor-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.command-palette button,
+.program-blocks button {
+  border: 2px solid #a99ae5;
+  border-radius: 12px;
+  background: #e8e0ff;
+  color: #53418f;
+  padding: 10px 12px;
+  font-weight: 900;
+}
+
+.command-palette button:hover:not(:disabled) {
+  background: #d9ceff;
+}
+
+.program-blocks {
+  min-height: 100px;
+  border: 2px dashed #b8b2dc;
+  border-radius: 14px;
+  padding: 12px;
+  background: white;
+}
+
+.program-blocks > span {
+  color: #7c81a8;
+  font-weight: 700;
+}
+
+.program-blocks button {
+  background: #dcf4ff;
+  border-color: #9ad1e7;
+}
+
+.editor-buttons {
+  margin-top: 18px;
+  align-items: center;
+}
+
+.editor-buttons button {
+  border: 2px solid #e4dcf3;
+  background: #fffaf4;
+  color: #5d53a4;
+  padding: 12px 18px;
+  border-radius: 13px;
+  font-weight: 900;
+}
+
+.editor-buttons .primary {
+  background: #ffd268;
+  color: #754316;
+  border-color: #e7a537;
+}
+
+.hint-button {
+  border: 0;
+  background: transparent;
+  color: #6851b6;
+  margin-top: 12px;
+  padding: 12px 18px;
+  border-radius: 13px;
+  font-weight: 900;
+}
+
+.game-message {
+  padding: 12px;
+  border-radius: 12px;
+  background: #fff0d6;
+  font-weight: 800;
+}
+
+.game-message.success {
+  background: #dff5dc;
+  color: #34784d;
+}
+
+.gameplay-wrap .next-level {
+  margin-top: 12px;
+  width: 100%;
+}
+
+/* =====================================
+   MY PROGRESS
+   ===================================== */
+
+.progress-panel {
+  max-width: 720px;
+  margin: 30px auto;
+  background: #fffaf1;
+  border: 4px solid white;
+  border-radius: 26px;
+  padding: 25px;
+  text-align: center;
+}
+
+.progress-bar {
+  height: 20px;
+  background: #ded8f1;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 22px 0;
+}
+
+.progress-bar > div {
+  height: 100%;
+  background: #80c995;
+  transition: width 0.3s ease;
+}
+
+.progress-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 15px;
+  border-bottom: 1px solid #ded8ed;
+  font-weight: 900;
+  text-align: left;
+}
+
+/* =====================================
+   MY CREATIONS
+   ===================================== */
+
+.creation-panel {
+  max-width: 720px;
+  margin: 25px auto;
+  background: #fffaf1;
+  border: 4px solid white;
+  border-radius: 26px;
+  padding: 22px;
+  text-align: center;
+}
+
+.creation-panel label {
+  display: block;
+  margin: 12px 0;
+  font-weight: 900;
+}
+
+.creation-panel input {
+  border: 2px solid #c7bce7;
+  border-radius: 10px;
+  padding: 10px;
+  margin-left: 10px;
+  max-width: 100%;
+}
+
+.creation-preview {
+  height: 220px;
+  border-radius: 20px;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+  overflow: hidden;
+}
+
+.creation-preview .nova {
+  height: 180px;
+  width: 140px;
+}
+
+.creation-preview .byte {
+  height: 120px;
+  width: 95px;
+}
+
+/* =====================================
+   TABLET RESPONSIVE STYLES
+   ===================================== */
+
+@media (max-width: 850px) {
+  .hero-backdrop .floating-island {
+    transform: scale(0.43);
+  }
+
+  .hero-backdrop .studio {
+    display: none;
+  }
+
+  .hero-backdrop .forest {
+    left: -10%;
+  }
+
+  .hero-backdrop .robot {
+    right: -12%;
+  }
+
+  .hero-backdrop .mystery {
+    right: -12%;
+  }
+
+  .hero-backdrop .space {
+    left: -12%;
+  }
+
+  .map-panel {
+    min-height: 1050px;
+  }
+
+  .world-map {
+    min-height: 990px;
+  }
+
+  .world-map .forest {
+    top: 3%;
+    left: 5%;
+  }
+
+  .world-map .robot {
+    top: 3%;
+    right: 5%;
+    left: auto;
+  }
+
+  .world-map .space {
+    top: 36%;
+    left: 5%;
+    bottom: auto;
+  }
+
+  .world-map .mystery {
+    top: 36%;
+    right: 5%;
+  }
+
+  .world-map .studio {
+    top: 68%;
+    left: calc(50% - 130px);
+    right: auto;
+    bottom: auto;
+  }
+}
+
+@media (max-width: 800px) {
+  .gameplay-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gameplay-scene,
+  .gameplay-scene .forest-scene {
+    min-height: 320px;
+    height: 320px;
+  }
+
+  .code-editor {
+    padding: 16px;
+  }
+}
+
+/* =====================================
+   MOBILE RESPONSIVE STYLES
+   ===================================== */
+
+@media (max-width: 540px) {
+  .home-screen {
+    padding-top: 70px;
+  }
+
+  .home-screen h1 {
+    font-size: 64px;
+  }
+
+  .home-characters {
+    height: 220px;
+  }
+
+  .home-characters .nova {
+    height: 220px;
+    width: 165px;
+  }
+
+  .home-characters .byte {
+    height: 145px;
+    width: 110px;
+  }
+
+  .hero-backdrop .floating-island {
+    opacity: 0.5;
+    transform: scale(0.32);
+  }
+
+  .hero-backdrop .forest {
+    top: 24%;
+    left: -24%;
+  }
+
+  .hero-backdrop .robot {
+    top: 21%;
+    right: -25%;
+  }
+
+  .hero-backdrop .space,
+  .hero-backdrop .mystery {
+    display: none;
+  }
+
+  .secondary-actions {
+    flex-direction: column;
+  }
+
+  .topbar-right {
+    display: none;
+  }
+
+  .inner-screen {
+    padding: 16px 10px 50px;
+  }
+
+  .map-panel {
+    min-height: 960px;
+  }
+
+  .world-map {
+    min-height: 900px;
+  }
+
+  .world-map .floating-island {
+    transform: scale(0.65);
+    transform-origin: center;
+  }
+
+  .world-map .forest {
+    top: 3%;
+    left: -10%;
+  }
+
+  .world-map .robot {
+    top: 3%;
+    right: -10%;
+    left: auto;
+  }
+
+  .world-map .space {
+    top: 34%;
+    left: -10%;
+    bottom: auto;
+  }
+
+  .world-map .mystery {
+    top: 34%;
+    right: -10%;
+  }
+
+  .world-map .studio {
+    top: 65%;
+    left: calc(50% - 130px);
+    right: auto;
+    bottom: auto;
+  }
+
+  .map-legend {
+    bottom: 8px;
+    left: 8px;
+    gap: 5px;
+  }
+
+  .map-legend span {
+    font-size: 10px;
+  }
+
+  .map-footer {
+    padding: 6px 10px;
+  }
+
+  .map-footer p {
+    font-size: 13px;
+  }
+
+  .progress-item {
+    font-size: 13px;
+  }
+}
+
+/* =====================================
+   ACCESSIBILITY
+   ===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-island,
+  .hero-backdrop .floating-island,
+  .home-characters .byte,
+  .cloud {
+    animation: none;
+  }
+}
+
+/* =====================================
+   CODEQUEST — FOREST GAMEPLAY PATCH
+   Leaves homepage and islands unchanged
+   ===================================== */
+
+.illustrated-forest {
+  position: relative;
+  overflow: hidden;
+}
+
+.illustrated-forest .forest-characters-moving {
+  position: absolute;
+  z-index: 10;
+  right: auto;
+  bottom: auto;
+  margin: 0;
+  width: 115px;
+  height: 135px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  transform: translate(-50%, -62%);
+  transition:
+    left 0.6s ease-in-out,
+    top 0.6s ease-in-out;
+  pointer-events: none;
+}
+
+.illustrated-forest .forest-characters-moving .nova {
+  width: 83px;
+  height: 130px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.illustrated-forest .forest-characters-moving .byte {
+  width: 52px;
+  height: 80px;
+  object-fit: contain;
+  flex-shrink: 0;
+  margin-left: -16px;
+  margin-bottom: 15px;
+}
+
+.forest-firefly,
+.forest-magic-gate,
+.forest-finish {
+  position: absolute;
+  z-index: 4;
+  transform: translate(-50%, -65%);
+  pointer-events: none;
+}
+
+.forest-firefly {
+  font-size: 31px;
+  filter:
+    drop-shadow(0 0 8px #ffef75)
+    drop-shadow(0 0 16px #ffe96a);
+  animation: forestFireflyPulse 1.7s ease-in-out infinite;
+}
+
+.forest-magic-gate {
+  font-size: 58px;
+  filter: drop-shadow(0 0 12px #fff2a2);
+}
+
+.forest-magic-gate.opened {
+  animation: forestGateOpen 0.8s ease-out forwards;
+}
+
+.forest-finish {
+  font-size: 36px;
+}
+
+.forest-celebration {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 15;
+  background: #fff9e8;
+  border: 3px solid #f6d57d;
+  border-radius: 25px;
+  padding: 10px 18px;
+  color: #7152bb;
+  font-weight: 900;
+  white-space: nowrap;
+  box-shadow: 0 5px 15px #4d557333;
+}
+
+@keyframes forestFireflyPulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: translate(-50%, -65%) scale(0.85);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -80%) scale(1.2);
+  }
+}
+
+@keyframes forestGateOpen {
+  from {
+    opacity: 1;
+    scale: 1;
+  }
+
+  to {
+    opacity: 0.4;
+    scale: 1.2;
+  }
+}
+
+@media (max-width: 540px) {
+  .illustrated-forest .forest-characters-moving {
+    width: 80px;
+    height: 100px;
+  }
+
+  .illustrated-forest .forest-characters-moving .nova {
+    width: 60px;
+    height: 95px;
+  }
+
+  .illustrated-forest .forest-characters-moving .byte {
+    width: 38px;
+    height: 60px;
+  }
+
+  .forest-magic-gate {
+    font-size: 42px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .illustrated-forest .forest-characters-moving {
+    transition: none;
+  }
+
+  .forest-firefly,
+  .forest-magic-gate.opened {
+    animation: none;
+  }
+}

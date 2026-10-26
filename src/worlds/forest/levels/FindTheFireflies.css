@@ -1,0 +1,216 @@
+
+.firefly-level {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 24px;
+  isolation: isolate;
+  background: linear-gradient(
+    180deg,
+    #272657 0%,
+    #55518d 48%,
+    #a19ac8 100%
+  );
+}
+
+.firefly-moon {
+  position: absolute;
+  top: 28px;
+  right: 90px;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: #fff4c4;
+  box-shadow:
+    0 0 35px #ffe9a780,
+    0 0 90px #ffe9a740;
+}
+
+.firefly-stars {
+  position: absolute;
+  top: 24px;
+  left: 12%;
+  width: 55%;
+  color: #f9edb5;
+  font-size: 25px;
+  letter-spacing: 24px;
+  opacity: .8;
+}
+
+.firefly-hill {
+  position: absolute;
+  width: 125%;
+  left: -12%;
+  border-radius: 50% 50% 0 0;
+}
+
+.hill-back {
+  height: 180px;
+  bottom: 20px;
+  background: #395c68;
+}
+
+.hill-front {
+  height: 125px;
+  bottom: -55px;
+  background: #294c46;
+}
+
+.firefly-tree {
+  position: absolute;
+  bottom: 40px;
+  width: 155px;
+  height: 285px;
+  z-index: 2;
+}
+
+.tree-left {
+  left: -65px;
+}
+
+.tree-right {
+  right: -75px;
+  transform: scale(1.15);
+}
+
+.tree-trunk {
+  position: absolute;
+  bottom: 0;
+  left: 65px;
+  width: 32px;
+  height: 180px;
+  border-radius: 18px;
+  background: #382f4b;
+}
+
+.tree-leaves {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 155px;
+  height: 175px;
+  border-radius: 48%;
+  background: #254c50;
+  box-shadow:
+    -30px 35px 0 #305d58,
+    35px 30px 0 #1e424a;
+}
+
+.firefly-path-stone {
+  position: absolute;
+  z-index: 4;
+  width: 74px;
+  height: 28px;
+  border-radius: 50%;
+  background: #8b9b9a;
+  border: 3px solid #b9c7b7;
+  transform: translate(-50%, -15%);
+  box-shadow: 0 7px 0 #172f3b70;
+}
+
+.firefly-light {
+  position: absolute;
+  z-index: 6;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #fff7a3;
+  box-shadow:
+    0 0 10px 4px #fff2a7,
+    0 0 26px 9px #e9ed78aa;
+  animation: fireflyFloat 3s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes fireflyFloat {
+  0% {
+    transform: translate(0, 0) scale(.75);
+    opacity: .45;
+  }
+  100% {
+    transform: translate(9px, -17px) scale(1.25);
+    opacity: 1;
+  }
+}
+
+.firefly-lantern {
+  position: absolute;
+  z-index: 7;
+  transform: translate(-50%, -85%);
+}
+
+.lantern-icon {
+  position: relative;
+  z-index: 2;
+  font-size: 48px;
+  filter: drop-shadow(0 0 12px #ffdc85);
+}
+
+.lantern-glow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #ffe6a655;
+  filter: blur(18px);
+  transform: translate(-50%, -50%);
+  animation: lanternPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes lanternPulse {
+  from { opacity: .5; }
+  to { opacity: 1; }
+}
+
+.firefly-characters {
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  align-items: flex-end;
+  transform: translate(-50%, -78%);
+  transition:
+    left .65s ease,
+    top .65s ease;
+}
+
+.firefly-characters img:first-child {
+  width: 82px;
+  height: 125px;
+  object-fit: contain;
+}
+
+.firefly-characters img:last-child {
+  width: 52px;
+  height: 80px;
+  object-fit: contain;
+  margin-left: -15px;
+}
+
+.firefly-victory {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  z-index: 20;
+  transform: translateX(-50%);
+  padding: 12px 20px;
+  border-radius: 30px;
+  background: #fff7d9;
+  color: #58418a;
+  font-weight: 900;
+  white-space: nowrap;
+  box-shadow: 0 5px 25px #18183b55;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .firefly-light,
+  .lantern-glow {
+    animation: none;
+  }
+
+  .firefly-characters {
+    transition: none;
+  }
+}

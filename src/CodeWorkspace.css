@@ -1,0 +1,363 @@
+
+.cq-workspace {
+  width: 100%;
+  font-family: inherit;
+  color: #40365e;
+}
+
+.cq-workspace-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.cq-eyebrow {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #9b83c9;
+}
+
+.cq-workspace-heading h3 {
+  margin: 4px 0 0;
+  font-size: 24px;
+  font-weight: 900;
+  color: #44336f;
+}
+
+.cq-block-count {
+  padding: 7px 12px;
+  background: #f0e9ff;
+  border-radius: 20px;
+  color: #8062bb;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.cq-instructions {
+  margin: 10px 0 22px;
+  color: #9184aa;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.cq-section-label {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  color: #9686b5;
+  margin-bottom: 12px;
+}
+
+.cq-palette {
+  margin-bottom: 25px;
+}
+
+.cq-palette-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cq-code-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 46px;
+  padding: 11px 16px;
+  border-radius: 13px;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: grab;
+  user-select: none;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.cq-code-block:hover {
+  transform: translateY(-2px);
+}
+
+.cq-code-block:active {
+  cursor: grabbing;
+}
+
+.cq-forward {
+  background: #85c4f3;
+  color: #194c76;
+  border: 2px solid #64afe9;
+  box-shadow: 0 4px 0 #5198d0;
+}
+
+.cq-charge {
+  background: #c6a5f7;
+  color: #533184;
+  border: 2px solid #af87e9;
+  box-shadow: 0 4px 0 #9972d2;
+}
+
+.cq-repeat-palette {
+  background: #ffd276;
+  color: #805410;
+  border: 2px solid #f0b84d;
+  box-shadow: 0 4px 0 #dda33b;
+}
+
+.cq-program-section {
+  margin-top: 12px;
+}
+
+.cq-program-area {
+  min-height: 200px;
+  padding: 18px;
+  border: 2px dashed #d9c9f5;
+  border-radius: 20px;
+  background: #faf7ff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13px;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+
+.cq-program-area.cq-dragging {
+  background: #f4edff;
+  border-color: #b49be6;
+}
+
+.cq-program-area > .cq-code-block {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cq-program-area .cq-code-block {
+  padding-right: 42px;
+}
+
+.cq-empty-state {
+  width: 100%;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  color: #a698c0;
+}
+
+.cq-empty-icon {
+  font-size: 34px;
+  margin-bottom: 4px;
+}
+
+.cq-empty-state strong {
+  font-size: 15px;
+  color: #8067b4;
+}
+
+.cq-empty-state span {
+  font-size: 12px;
+}
+
+.cq-repeat-block {
+  width: 100%;
+  box-sizing: border-box;
+  background: #ffd16d;
+  border: 2px solid #eeb448;
+  border-radius: 15px;
+  color: #795013;
+  box-shadow: 0 5px 0 #d9a03e;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.cq-repeat-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 52px;
+  padding: 9px 12px;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.cq-repeat-icon {
+  font-size: 19px;
+}
+
+.cq-repeat-header select {
+  appearance: auto;
+  padding: 5px 9px;
+  border: 2px solid #e7ae47;
+  border-radius: 9px;
+  background: #fff9e9;
+  color: #795013;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.cq-repeat-body {
+  padding-left: 17px;
+  background: #dba348;
+}
+
+.cq-repeat-contents {
+  min-height: 76px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  padding: 12px;
+  background: #faf7ff;
+  border-radius: 12px 0 0 12px;
+}
+
+.cq-repeat-contents .cq-code-block {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cq-drop-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 10px;
+  border: 2px dashed #d9c8ef;
+  border-radius: 10px;
+  color: #aa9abe;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.cq-repeat-bottom {
+  height: 17px;
+  background: #ffd16d;
+}
+
+.cq-remove {
+  position: absolute;
+  right: 9px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  color: inherit;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.cq-repeat-remove {
+  position: static;
+  transform: none;
+  margin-left: auto;
+}
+
+.cq-remove:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.cq-clear-button {
+  margin-top: 18px;
+  padding: 11px 16px;
+  background: #f4eefa;
+  color: #8266b2;
+  border: 1px solid #e5d7f5;
+  border-radius: 12px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.cq-clear-button:hover:not(:disabled) {
+  background: #ebdefa;
+}
+
+.cq-clear-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .cq-program-area {
+    padding: 12px;
+  }
+
+  .cq-repeat-header {
+    font-size: 12px;
+  }
+
+  .cq-code-block {
+    font-size: 12px;
+  }
+}
+
+/* Compact CodeQuest blocks and reduced decorative clutter */
+.cq-workspace-heading h3 {font-size:20px;}
+.cq-instructions {margin:6px 0 12px;}
+.cq-palette {margin-bottom:14px;}
+.cq-palette-items {gap:7px;}
+.cq-code-block {min-height:37px; padding:8px 11px; font-size:12px; gap:7px;}
+.cq-section-label {margin-bottom:7px;}
+.cq-program-section {margin-top:10px;}
+.cq-repeat-header {min-height:38px;}
+.cq-repeat-contents {min-height:42px;}
+
+
+/* Robot City: movement and action block colors */
+
+.cq-code-block.cq-left,
+.cq-code-block.cq-right {
+  background: #85c4f3;
+  color: #194c76;
+  border: 2px solid #64afe9;
+  box-shadow: 0 4px 0 #5198d0;
+}
+
+.cq-code-block.cq-light {
+  background: #ffe49a;
+  color: #805410;
+  border: 2px solid #f0c866;
+  box-shadow: 0 4px 0 #dbaa4e;
+}
+
+/* Keep the palette compact */
+
+.cq-palette-items {
+  gap: 8px;
+}
+
+.cq-palette-items .cq-code-block {
+  min-height: 38px;
+  padding: 8px 11px;
+  border-radius: 11px;
+}
+
+.cq-code-block.cq-rescue {
+  background: #ffb8d5 !important;
+  color: #813658 !important;
+  border: 2px solid #ed88b4 !important;
+  box-shadow: 0 4px 0 #d96d9f !important;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-weight: 800;
+}
+.cq-code-block.cq-rescue:hover { background: #ffc9e0 !important; }

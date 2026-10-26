@@ -1,0 +1,21 @@
+/* Robot City level 2: compact, illustrated nighttime scene */
+.streetlight-level {position:relative; width:100%; overflow:hidden; border-radius:20px; background:#7b8fc0; font-family:inherit;}
+.streetlight-level__art {display:block; width:100%; height:auto;}
+.streetlight-level__nova {position:absolute; left:1%; bottom:15%; width:clamp(46px,13%,86px); max-height:35%; object-fit:contain; object-position:bottom; filter:drop-shadow(0 5px 3px rgba(37,37,74,.22)); pointer-events:none;}
+.streetlight-level__hud {display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; padding:11px 16px; background:#f4efff; color:#594780; font-size:13px; font-weight:750;}
+.streetlight-level__counter {padding:5px 11px; border-radius:20px; background:#e5dafa; white-space:nowrap;}
+.streetlight-level__counter strong {color:#5137a0;}
+.streetlight-level__success {padding:10px 14px; background:#e0f8e8; color:#31744c; font-size:13px; font-weight:800; text-align:center;}
+@media(max-width:600px){.streetlight-level__nova{bottom:19%;width:12%;}.streetlight-level__hud{font-size:12px;padding:9px 12px;}}
+
+/* Nova and Byte move together */
+
+.streetlight-level__nova-follow {
+  pointer-events: none;
+  filter: drop-shadow(0 4px 3px rgba(37, 37, 74, 0.2));
+}
+
+.streetlight-level__byte,
+.streetlight-level__nova-follow {
+  transition: transform 0.55s ease-in-out;
+}

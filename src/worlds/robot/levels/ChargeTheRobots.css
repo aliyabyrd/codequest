@@ -1,0 +1,27 @@
+/* Robot City — Level 1. Scoped styles: does not change Forest or homepage. */
+.robot-level{position:relative;width:100%;height:100%;min-height:350px;overflow:hidden;border-radius:18px;background:linear-gradient(#a5d7fb 0%,#e5d7ff 64%,#c9e6f2 65%);isolation:isolate}
+.robot-sun{position:absolute;right:9%;top:9%;width:65px;height:65px;border-radius:50%;background:#fff4b0;box-shadow:0 0 0 15px #fff4b045,0 0 45px #fff6b9}
+.robot-building{position:absolute;bottom:24%;display:flex;flex-direction:column;align-items:center;justify-content:space-evenly;color:#fff8c3;font-size:27px;letter-spacing:8px;border:4px solid #ffffff6b;border-bottom:0;border-radius:15px 15px 0 0;box-shadow:inset -12px 0 #0000000b}
+.building-a{left:4%;width:23%;height:43%;background:#92a5ea}.building-b{left:34%;width:30%;height:58%;background:#d49cdb}.building-c{right:3%;width:23%;height:48%;background:#73bedc}
+.robot-road{position:absolute;bottom:0;left:0;right:0;height:19%;background:#8387ba;border-top:7px solid #e5d6f7}
+.robot-road:after{content:'';position:absolute;top:55%;width:100%;border-top:4px dashed #fff9d7}
+.robot-sidewalk{position:absolute;bottom:18%;width:100%;height:9%;background:#e6d5ee;border-top:5px solid #fff4fd}
+.robot-station{position:absolute;bottom:29%;width:18%;text-align:center;transform:translateX(-50%);z-index:2}
+.station-1{left:32%}.station-2{left:57%}.station-3{left:82%}
+.robot-bot{position:relative;margin:0 auto;width:66px;height:68px;border:5px solid #5f78a9;border-radius:17px;background:#9daed3;box-shadow:0 5px 0 #576e9c}
+.robot-station.charged .robot-bot{background:#89e0bb;border-color:#399c86;box-shadow:0 0 18px #b6ffb6}
+.robot-antenna{position:absolute;left:50%;top:-21px;height:17px;width:5px;background:#5f78a9;transform:translateX(-50%)}
+.robot-antenna:before{content:'';position:absolute;top:-6px;left:-4px;width:13px;height:13px;background:#ffca81;border-radius:50%}
+.robot-face{display:flex;justify-content:space-around;padding:20px 10px 0}
+.robot-face i{width:9px;height:12px;background:#3e5482;border-radius:50%}
+.robot-mouth{display:block;width:19px;height:6px;margin:8px auto;background:#3e5482;border-radius:10px}
+.robot-battery{margin:8px auto 3px;background:#ffffffee;color:#3e5482;padding:5px 7px;border-radius:12px;font-weight:800;font-size:12px;white-space:nowrap;width:max-content}
+.robot-station-label{font-weight:800;color:#443d7c;text-shadow:0 1px white;font-size:12px}
+.robot-charged-sparkle{position:absolute;right:0;top:-20px;color:#ffdb6e;font-size:28px;animation:robot-sparkle 1s infinite alternate}
+.robot-friends{position:absolute;bottom:14%;display:flex;align-items:end;gap:0;z-index:4;transition:left .75s ease-in-out;transform:translateX(-25%);pointer-events:none}
+.robot-friends img{width:clamp(42px,6vw,68px);height:clamp(58px,8vw,87px);object-fit:contain;filter:drop-shadow(0 4px 3px #32364c33)}
+.robot-counter{position:absolute;left:12px;top:12px;background:#fffef3ee;border:2px solid #ffffff;padding:8px 13px;border-radius:20px;font-weight:800;font-size:13px;color:#494281;z-index:5}
+.robot-victory{position:absolute;left:50%;top:17%;transform:translateX(-50%);width:max-content;max-width:92%;padding:12px 18px;border-radius:20px;background:#fff9d7;color:#61518c;font-weight:900;text-align:center;z-index:6;box-shadow:0 6px 24px #5a4e9955}
+.loop-guide{display:flex;flex-direction:column;gap:5px;padding:10px 13px;margin:10px 0;border:2px solid #c9b6f1;border-radius:12px;background:#f5efff;color:#5d488b;font-size:13px}
+@keyframes robot-sparkle{to{transform:scale(1.25);opacity:.65}}
+@media(max-width:550px){.robot-level{min-height:300px}.robot-bot{width:46px;height:49px;border-width:3px}.robot-face{padding:13px 7px 0}.robot-mouth{margin:4px auto}.robot-building{font-size:16px}.robot-station{bottom:30%}.robot-station-label{font-size:10px}.robot-battery{font-size:10px;padding:3px 4px}.robot-friends img{width:40px;height:58px}.robot-victory{font-size:12px}}
